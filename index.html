@@ -139,27 +139,11 @@
             50% { transform: scale(1.05); }
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
 
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
 
-        .hero .description {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-        }
+
+
+
 
         .cta-buttons {
             display: flex;
@@ -530,6 +514,39 @@
                 transform: translateX(-50%) translateY(-5px);
             }
         }
+
+        .profile-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.hero .description {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
     </style>
 </head>
 <body>
@@ -548,29 +565,31 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+<section id="home" class="hero">
+    <div class="hero-content fade-in">
+        <div class="profile-container">
             <img src="profilepic.png" alt="Durga Katreddi" class="profile-img">
-            <h1>Durga Katreddi</h1>
-            <p class="subtitle">🤖 AI Engineer | 🌐 Technology Connector | 🤝 Strategic Partnership Builder</p>
-            <p class="description">
-                Relationship-driven technology leader with 5+ years of experience bridging complex AI solutions 
-                with business stakeholders. Proven track record of building cross-functional partnerships 
-                that delivered $6M+ in business value.
-            </p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i> Let's Connect
-                </a>
-                <a href="portfolio.html" class="btn btn-secondary">
-                    <i class="fas fa-folder"></i> View Portfolio
-                </a>
-            </div>
         </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+        <h1>Durga Katreddi</h1>
+        <p class="subtitle">🤖 AI Engineer | 🌐 Technology Connector | 🤝 Strategic Partnership Builder</p>
+        <p class="description">
+            Relationship-driven technology leader with 5+ years of experience bridging complex AI solutions 
+            with business stakeholders. Proven track record of building cross-functional partnerships 
+            that delivered $6M+ in business value.
+        </p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Let's Connect
+            </a>
+            <a href="portfolio.html" class="btn btn-secondary">
+                <i class="fas fa-folder"></i> View Portfolio
+            </a>
         </div>
-    </section>
+    </div>
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="section">
@@ -779,11 +798,11 @@
                     <h3>Email</h3>
                     <a href="mailto:katreddisrisaidurga@gmail.com">katreddisrisaidurga@gmail.com</a>
                 </div>
-                <div class="contact-item fade-in">
+                <!-- <div class="contact-item fade-in">
                     <i class="fas fa-phone"></i>
                     <h3>Phone</h3>
                     <a href="tel:+19174007205">+1 (917) 400-7205</a>
-                </div>
+                </div> -->
                 <div class="contact-item fade-in">
                     <i class="fab fa-linkedin"></i>
                     <h3>LinkedIn</h3>
@@ -1124,18 +1143,31 @@
                 display: none;
             }
             
-            .hero h1 {
-                font-size: 2rem;
-            }
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
             
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
             
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    border: 5px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: pulse 2s ease-in-out infinite;
+    object-fit: cover;
+    object-position: center top; /* This will focus on the top part of your image */
+    display: block; /* Ensures proper centering */
+}
             
             .skills-grid {
                 grid-template-columns: 1fr;
