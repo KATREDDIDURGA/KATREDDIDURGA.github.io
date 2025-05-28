@@ -1,766 +1,1192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Durga Katreddi - AI & ML Engineer</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body, h1, h2, h3, h4, h5, h6 {
-      font-family: "Raleway", sans-serif
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durga Katreddi - AI Engineer & Technology Connector</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body, html {
-      height: 100%;
-      line-height: 1.8;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
 
-    /* Full height image header */
-    .bgimg-1 {
-      background-position: center 7%;
-      background-size: 150vh;
-      background-repeat: no-repeat;
-      background-image: url("profilepic.png");
-      background-color: #1a202c;
-      min-height: 100%;
-      position: relative;
-      transition: background-size 0.3s ease;
-    }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
 
-    /* Hover effect for the background image */
-    .bgimg-1:hover {
-      background-size: 160vh;
-      cursor: pointer;
-    }
-    .hero-text-container {
-      position: absolute;
-      bottom: 15%;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-    .w3-bar .w3-button {
-      padding: 16px;
-    }
-    
-    /* Fix for image paths */
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    /* Fix for duplicate style attribute */
-    .dark-bg {
-      background-color: #1a202c;
-      padding: 128px 16px;
-    }
-    .expertise-grid {
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 0,0 1000,0"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        /* About Section */
+        .section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: #f8faff;
+        }
+
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
 
-        .expertise-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
-        .expertise-card:hover {
+        .skill-category:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 20px;
-            color: #4FD1C5;
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .expertise-title {
-            font-size: 22px;
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            padding: 5px;
+            background: #f8faff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .tech-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
             color: #333;
         }
 
-        .dark .expertise-title {
-            color: #4FD1C5;
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
-        .expertise-description {
-            font-size: 16px;
-            color: #1a202c;
-            margin-top: auto;
-        }
-
-        .row {
-            margin-bottom: 30px;
-        }
-
-        /* Special styling for Machine Learning card */
-        .expertise-card.highlight .expertise-title {
-    color: #4FD1C5;
-}
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .expertise-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-            
-            h1 {
-                font-size: 30px;
-                margin-bottom: 30px;
-            }
-        }
-    
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      .w3-quarter {
-        width: 100%;
-        margin-bottom: 32px;
-      }
-      .bgimg-1 {
-        background-size: auto 100%;
-      }
-      .hero-text-container {
-        bottom: 10%;
-      }
-    }
-    .btn-row {
+        .project-tags {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 40px;
+            gap: 0.5rem;
         }
-        
-        .btn {
-            background-color: #4FD1C5;
+
+        .tag {
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 15px 30px;
-            font-size: 1rem;
-            cursor: pointer;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: background-color 0.3s;
         }
-        
-        .btn:hover {
-            background-color: #4FD1C5;
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
         }
-        
-        .btn-primary {
-            min-width: 200px;
-        }
-        
-        .privacy-notice {
-            color: #a0aec0;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-        
-        .social-icons {
+
+        .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 50px 0;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
-        
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
         }
-        
-        .footer {
-            color: #a0aec0;
-            margin-top: 20px;
-            font-size: 0.9rem;
+
+        .social-link:hover {
+            transform: scale(1.1);
         }
-        
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .btn-row {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
+
+            .btn {
+                width: 200px;
+            }
         }
 
-  </style>
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Navbar (sit on top) -->
-  <!-- <div class="w3-top">
-    <div class="w3-bar w3-white w3-card" id="myNavbar">
-      <a href="#home" class="w3-bar-item w3-button w3-wide">AI</a> -->
-      <!-- Right-sided navbar links -->
-      <!-- <div class="w3-right w3-hide-small">
-        <a href="portfolio.html" class="w3-bar-item w3-button">HOME</a>
-        <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-      </div> -->
-      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-      <!-- <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-  </div> -->
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Durga Katreddi</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- Sidebar on small screens when clicking the menu icon -->
-  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-    <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-    <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-  </nav>
-
-  <!-- Header with full-height image -->
-  <header class="bgimg-1 w3-display-container" id="home">
-    <div class="hero-text-container w3-text-white">
-      <div class="w3-center" style="margin: 20px 0;">
-        <img src="cyber-security.png" alt="Cyber Security Icon" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) saturate(100%) invert(71%) sepia(34%) saturate(592%) hue-rotate(133deg) brightness(92%) contrast(84%);">
-        <img src="database.png" alt="Database Icon" style="height: 60px; margin: 0 20px; vertical-align: middle;filter: brightness(0) saturate(100%) invert(71%) sepia(34%) saturate(592%) hue-rotate(133deg) brightness(92%) contrast(84%);">
-        <img src="deep-learning.png" alt="Deep Learning Icon" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) saturate(100%) invert(71%) sepia(34%) saturate(592%) hue-rotate(133deg) brightness(92%) contrast(84%);">
-      </div>
-      <span class="w3-jumbo w3-hide-small" style="font-weight: 700; font-family: 'Helvetica Neue', Arial, sans-serif; color: white;">Durga Katreddi</span><br>
-      <span class="w3-xlarge" style="font-weight: 600; font-family: 'Helvetica Neue', Arial, sans-serif; color: white;">AI & Machine Learning <span style="color: #4FD1C5;">Engineer</span></span><br>
-      <span class="w3-large" style="font-weight: 600; font-family: 'Helvetica Neue', Arial, sans-serif; color: lightgray;">AI & ML specialist crafting innovative solutions that transform data into actionable intelligence and business value.</span>
-    </div>
-    <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-      <a href="https://linkedin.com/in/sri-sai-durga-katreddi-" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin w3-hover-opacity" style="margin-right: 20px; font-size: 28px;"></i></a>
-      <a href="mailto:katreddisrisaidurga@gmail.com" aria-label="Email"><i class="fa fa-envelope w3-hover-opacity" style="margin-right: 20px; font-size: 28px;"></i></a>
-      <a href="https://github.com/KATREDDIDURGA" target="_blank" aria-label="GitHub"><i class="fa fa-github w3-hover-opacity" style="font-size: 28px;"></i></a>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <div class="w3-container" style="padding:50px 16px" id="about">
-    <h3 class="w3-center">Download my resume</h3>
-    <p class="w3-center w3-large">Explore my comprehensive CV to uncover my journey—where AI meets expertise, blending professional experience, academic excellence, and groundbreaking projects.</p>
-    <div class="w3-center">
-      <a href="resume.pdf" download class="w3-button w3-padding-large" style="background-color: #4FD1C5; color: white; margin-top: 20px; border-radius: 4px;">
-        <i class="fa fa-download w3-margin-right"></i>Download Resume
-      </a>
-    </div>
-  </div>
-  
-  <div class="w3-container dark-bg" id="about">
-    <h3 class="w3-center" style="color: white;">My AI Journey</h3>
-    <div class="w3-row-padding" style="margin-top:64px">
-      <div class="w3-quarter">
-        <div class="w3-padding" style="text-align: center;"> <!-- Added text-align: center here -->
-          <i class="fa fa-desktop w3-margin-bottom w3-jumbo" style="color: white;"></i>
-          <h4 style="color: white; margin-bottom: 8px;">Data Science Foundations</h4>
-          <p style="color: white; font-weight: bold; margin-top: 0;">2019</p>
-          <p style="color: white; text-align: justify; padding: 0 16px;">
-            Launched my career by developing predictive models, optimizing machine learning workflows, and solving data problems using tools like Python, Scikit-learn, and MongoDB.
-          </p>
-        </div>
-      </div>
-      <div class="w3-quarter">
-        <div class="w3-padding" style="text-align: center;"> <!-- Added text-align: center here -->
-          <i class="fa fa-heart w3-margin-bottom w3-jumbo" style="color: white;"></i>
-          <h4 style="color: white; margin-bottom: 8px;">Machine Learning & Data Science Advancement</h4>
-          <p style="color: white; font-weight: bold; margin-top: 0;">2020</p>
-          <p style="color: white; text-align: justify; padding: 0 16px;">
-            Led impactful AI projects at Cognizant, improving credit risk prediction models and automating customer segmentation processes, achieving a $6M+ pre-tax income boost.
-          </p>
-        </div>
-      </div>
-      <div class="w3-quarter">
-        <div class="w3-padding" style="text-align: center;"> <!-- Added text-align: center here -->
-          <i class="fa fa-diamond w3-margin-bottom w3-jumbo" style="color: white;"></i>
-          <h4 style="color: white; margin-bottom: 8px;">AI Systems Architect</h4>
-          <p style="color: white; font-weight: bold; margin-top: 0;">2022</p>
-          <p style="color: white; text-align: justify; padding: 0 16px;">
-            Designed scalable AI platforms and ML-powered solutions, enhancing demand forecasting and operational efficiency, while implementing cutting-edge techniques like XGBoost and RAG pipelines.
-          </p>
-        </div>
-      </div>
-      <div class="w3-quarter">
-        <div class="w3-padding" style="text-align: center;"> <!-- Added text-align: center here -->
-          <i class="fa fa-cog w3-margin-bottom w3-jumbo" style="color: white;"></i>
-          <h4 style="color: white; margin-bottom: 8px;">Generative AI & Research Leadership</h4>
-          <p style="color: white; font-weight: bold; margin-top: 0;">2024</p>
-          <p style="color: white; text-align: justify; padding: 0 16px;">
-            Pioneered innovative generative AI systems, integrating LLMs and fine-tuning models to drive efficiency and automation, while researching advanced AI methodologies at the University of North Texas.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-<!-- Core Expertise Section -->
-<div class="w3-container" style="padding:64px 16px" id="expertise">
-    <h3 class="w3-center">Core Expertise</h3>
-    
-    <!-- Top Row (3 cards) -->
-    <div class="expertise-grid" style="margin-top:64px; display: flex; justify-content: center; flex-wrap: wrap;">
-      <!-- AI Engineering -->
-      <div class="expertise-card" style="margin: 16px; width: 300px;">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
-          <path d="M15 13a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
-          <path d="M9 13a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
-          <path d="M12 8v2"></path>
-          <path d="M15 15h-1.5"></path>
-          <path d="M9 15h1.5"></path>
-        </svg>
-        <h2 class="expertise-title">AI Engineering</h2>
-        <p class="expertise-description">Developing scalable AI solutions and ML architectures.</p>
-      </div>
-      
-      <!-- Machine Learning -->
-      <div class="expertise-card highlight" style="margin: 16px; width: 300px;">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-          <rect x="9" y="9" width="6" height="6"></rect>
-          <line x1="9" y1="1" x2="9" y2="4"></line>
-          <line x1="15" y1="1" x2="15" y2="4"></line>
-          <line x1="9" y1="20" x2="9" y2="23"></line>
-          <line x1="15" y1="20" x2="15" y2="23"></line>
-          <line x1="20" y1="9" x2="23" y2="9"></line>
-          <line x1="20" y1="14" x2="23" y2="14"></line>
-          <line x1="1" y1="9" x2="4" y2="9"></line>
-          <line x1="1" y1="14" x2="4" y2="14"></line>
-        </svg>
-        <h2 class="expertise-title">Machine Learning</h2>
-        <p class="expertise-description">Building and deploying advanced ML models.</p>
-      </div>
-      
-      <!-- Data Science -->
-      <div class="expertise-card" style="margin: 16px; width: 300px;">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="17" y1="10" x2="3" y2="10"></line>
-          <line x1="21" y1="6" x2="3" y2="6"></line>
-          <line x1="21" y1="14" x2="3" y2="14"></line>
-          <line x1="17" y1="18" x2="3" y2="18"></line>
-        </svg>
-        <h2 class="expertise-title">Data Science</h2>
-        <p class="expertise-description">Extracting insights from complex datasets.</p>
-      </div>
-    </div>
-    
-    <!-- Bottom Row (3 cards) -->
-    <div class="expertise-grid" style="margin-top: 32px; display: flex; justify-content: center; flex-wrap: wrap;">
-      <!-- NLP & LLMs -->
-      <div class="expertise-card" style="margin: 16px; width: 300px;">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-        </svg>
-        <h2 class="expertise-title">NLP & LLMs</h2>
-        <p class="expertise-description">Natural language processing and large language models.</p>
-      </div>
-      
-      <!-- Big Data Analytics -->
-      <div class="expertise-card" style="margin: 16px; width: 300px;">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-        </svg>
-        <h2 class="expertise-title">Big Data Analytics</h2>
-        <p class="expertise-description">Processing and analyzing large-scale datasets.</p>
-      </div>
-      
-      <!-- Predictive Analytics -->
-      <div class="expertise-card" style="margin: 16px; width: 300px;">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15V9"></path>
-          <path d="M18 12h6"></path>
-          <path d="M3 21V15l3-3 3 3v6"></path>
-          <path d="M9 3h12v6h-6v6H3V9h6z"></path>
-        </svg>
-        <h2 class="expertise-title">Predictive Analytics</h2>
-        <p class="expertise-description">Forecasting trends and outcomes with ML.</p>
-      </div>
-    </div>
-  </div>
-
-<!-- Professional Experience Section -->
-<div class="w3-container" style="padding:128px 16px; background-color: #1a202c;" id="experience">
-    <h3 class="w3-center" style="color: white;">Professional Experience</h3>
-    
-    <div class="w3-row-padding" style="margin-top:64px">
-      <!-- First Row: 2 cards -->
-      <div class="w3-col l6 m6 s12 w3-padding">
-        <!-- Global Digital Resources -->
-        <div class="w3-card w3-white w3-round-large" style="height: 480px; overflow-y: auto; padding: 24px;">
-          <h4 style="color: #333; margin-top: 0;"><b>AI Software Engineer</b></h4>
-          <h5 style="color: #333;"><b>Global Digital Resources</b></h5>
-          <p class="w3-opacity" style="color: #333; margin-bottom: 16px;">Sep 2024 – Present | Texas, USA</p>
-          <ul style="padding-left: 20px; color: #333; text-align: left;">
-            <li>Designed and deployed an AI-powered data integration platform</li>
-            <li>Implemented AI-driven process automation reducing costs by 22%</li>
-            <li>Developed ML models for inventory optimization saving $12M annually</li>
-            <li>Created executive dashboards with AI-generated insights</li>
-            <li>Automated customer service workflows improving response time by 64%</li>
-            <li>Established MLOps pipelines with Docker and Kubernetes</li>
-          </ul>
-          <div style="margin-top: 20px;">
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Machine Learning</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Data Science</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">MLOps</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">NLP</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Data Engineering</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Process Automation</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="w3-col l6 m6 s12 w3-padding">
-        <!-- University of North Texas -->
-        <div class="w3-card w3-white w3-round-large" style="height: 480px; overflow-y: auto; padding: 24px;">
-          <h4 style="color: #333; margin-top: 0;"><b>Research Data Scientist</b></h4>
-          <h5 style="color: #333;"><b>University of North Texas</b></h5>
-          <p class="w3-opacity" style="color: #333; margin-bottom: 16px;">Jan 2023 – Aug 2024 | Texas, USA</p>
-          <ul style="padding-left: 20px; color: #333; text-align: left;">
-            <li>Researched cutting-edge AI techniques including LLMs and generative models</li>
-            <li>Optimized model performance using LoRA, QLoRA, and MLflow</li>
-            <li>Developed AI safety protocols ensuring model fairness and robustness</li>
-            <li>Built information retrieval systems using vector databases</li>
-            <li>Improved LLM efficiency reducing inference costs</li>
-            <li>Designed multi-agent AI systems for complex problem-solving</li>
-          </ul>
-          <div style="margin-top: 20px;">
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Python</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Deep Learning</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">AWS</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Azure</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Docker</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">GitHub Actions</span>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Second Row: 2 cards -->
-      <div class="w3-col l6 m6 s12 w3-padding">
-        <!-- Cognizant -->
-        <div class="w3-card w3-white w3-round-large" style="height: 480px; overflow-y: auto; padding: 24px;">
-          <h4 style="color: #333; margin-top: 0;"><b>Machine Learning Engineer</b></h4>
-          <h5 style="color: #333;"><b>Cognizant (American Express)</b></h5>
-          <p class="w3-opacity" style="color: #333; margin-bottom: 16px;">Dec 2020 – Dec 2022 | India</p>
-          <ul style="padding-left: 20px; color: #333; text-align: left;">
-            <li>Developed credit risk prediction models influencing $6M+ in revenue</li>
-            <li>Improved model accuracy by 5% through advanced feature engineering</li>
-            <li>Productionized risk system serving 1.5M+ customers monthly</li>
-            <li>Created customer segmentation models increasing retention by 15%</li>
-            <li>Built Tableau dashboards visualizing risk trends for executives</li>
-            <li>Automated reporting pipelines saving 10+ hours monthly</li>
-          </ul>
-          <div style="margin-top: 20px;">
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Data Analytics</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Predictive Modeling</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Data Visualization</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Statistical Analysis</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Machine Learning</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="w3-col l6 m6 s12 w3-padding">
-        <!-- UJR Corporate Solutions -->
-        <div class="w3-card w3-white w3-round-large" style="height: 480px; overflow-y: auto; padding: 24px;">
-          <h4 style="color: #333; margin-top: 0;"><b>Data Scientist</b></h4>
-          <h5 style="color: #333;"><b>UJR Corporate Solutions</b></h5>
-          <p class="w3-opacity" style="color: #333; margin-bottom: 16px;">Aug 2019 – Dec 2020 | India</p>
-          <ul style="padding-left: 20px; color: #333; text-align: left;">
-            <li>Managed large-scale time-series data pipelines processing 100+ days of data</li>
-            <li>Developed forecasting models improving prediction accuracy by 30%</li>
-            <li>Implemented anomaly detection systems reducing errors by 25%</li>
-            <li>Built ensemble models combining 24 predictors for 15% better accuracy</li>
-            <li>Automated model deployment with MongoDB and API integration</li>
-            <li>Collaborated with engineering teams to operationalize solutions</li>
-          </ul>
-          <div style="margin-top: 20px;">
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Python</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">PyTorch</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">AI</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Docker</span>
-            <span class="w3-tag w3-small w3-round" style="background-color: #e9ecef; color: #333; margin: 2px;">Statistical Analysis</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-      <div class="w3-container w3-row w3-center w3-padding-64" style="background-color: #1a202c;">
-        <h3 class="w3-center" style="color: white;">Tools</h3>
-        <div class="w3-center" style="margin: 20px 0;">
-            <img src="mysql-database.png" alt="MySQL" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="numpy.png" alt="NumPy" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="pandas.png" alt="Pandas" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="powerbi.png" alt="Power BI" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="spark.png" alt="Spark" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="tensorflow.png" alt="TensorFlow" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="icons8-docker-50.png" alt="Docker" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="icons8-claude-50.png" alt="Claude" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="icons8-chatgpt-50.png" alt="ChatGPT" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">  
-            <img src="aws.webp" alt="AWS" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="Tableau-Symbol.png" alt="Hugging Face" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-            <img src="PostgreSQL-Logo.wine.png" alt="Pandas" style="height: 60px; margin: 0 20px; vertical-align: middle; filter: brightness(0) invert(1);">
-        </div>
-    </div>
-<!-- Projects Section -->
-<div class="w3-container" style="padding:128px 16px" id="projects">
-    <h3 class="w3-center">PROJECTS</h3>
-    <p class="w3-center w3-large">Innovative AI Solutions</p>
-  
-    <div class="w3-row-padding" style="margin-top:64px">
-      <!-- First Row - 3 cards -->
-      <div class="w3-row" style="margin-bottom:32px">
-        <!-- AI Powered Contract Reader -->
-        <div class="w3-col l4 m6 w3-margin-bottom">
-          <div class="w3-card w3-round-large w3-hover-shadow" style="height:100%; display:flex; flex-direction:column; margin:0 8px;">
-            <img src="healthai.jpg" alt="AI Contract Reader" style="width:100%; height:200px; object-fit:cover; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-            <div class="w3-container" style="padding: 24px; flex-grow:1;">
-              <h4 style="color: #333; font-weight: 600;"><b>AI Powered Contract Reader</b></h4>
-              <p class="w3-opacity">LLMs, RAG, LangChain</p>
-              <p style="text-align: justify; margin-bottom:24px;">Developed an AI-powered contract reading system leveraging GPT-4, Claude, and Retrieval-Augmented Generation, enabling efficient extraction and summarization of key legal terms while reducing manual review time by over 50%.</p>
-              <div class="w3-container w3-center">
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">GPT-4</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">RAG</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">FAISS</div>
-              </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content fade-in">
+            <img src="profilepic.png" alt="Durga Katreddi" class="profile-img">
+            <h1>Durga Katreddi</h1>
+            <p class="subtitle">🤖 AI Engineer | 🌐 Technology Connector | 🤝 Strategic Partnership Builder</p>
+            <p class="description">
+                Relationship-driven technology leader with 5+ years of experience bridging complex AI solutions 
+                with business stakeholders. Proven track record of building cross-functional partnerships 
+                that delivered $6M+ in business value.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Let's Connect
+                </a>
+                <a href="portfolio.html" class="btn btn-secondary">
+                    <i class="fas fa-folder"></i> View Portfolio
+                </a>
             </div>
-          </div>
         </div>
-        
-        <!-- AI-Powered Pronunciation Feedback -->
-        <div class="w3-col l4 m6 w3-margin-bottom">
-          <div class="w3-card w3-round-large w3-hover-shadow" style="height:100%; display:flex; flex-direction:column; margin:0 8px;">
-            <img src="speechai.jpg" alt="AI Pronunciation Feedback" style="width:100%; height:200px; object-fit:cover; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-            <div class="w3-container" style="padding: 24px; flex-grow:1;">
-              <h4 style="color: #333; font-weight: 600;"><b>AI Pronunciation Feedback</b></h4>
-              <p class="w3-opacity">Whisper, DeepSeek, AI Agents</p>
-              <p style="text-align: justify; margin-bottom:24px;">Developed a pronunciation practice system using Whisper for speech-to-text processing and DeepSeek for language modeling, providing real-time feedback on pronunciation accuracy to enhance fluency.</p>
-              <div class="w3-container w3-center">
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">Whisper</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">DeepSeek</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">AI Agents</div>
-              </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-stats">
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">$6M+</div>
+                        <div class="stat-label">Business Impact</div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Students Mentored</div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">3.8</div>
+                        <div class="stat-label">MS GPA</div>
+                    </div>
+                </div>
+                <div class="about-text fade-in">
+                    <p>
+                        I'm a passionate AI Engineer with a Master's in Data Science from the University of North Texas. 
+                        Currently working at Bank of America, I specialize in building intelligent systems that transform 
+                        complex data into actionable business insights.
+                    </p>
+                    <p>
+                        My expertise spans the entire AI/ML ecosystem - from traditional machine learning to cutting-edge 
+                        LLMs like GPT-4, Claude, and LLaMA. I've successfully led cross-functional teams, mentored 20+ 
+                        professionals, and built solutions that have generated millions in business value.
+                    </p>
+                    <p>
+                        What drives me most is the collaborative aspect of technology - translating complex AI concepts 
+                        for diverse audiences and building bridges between technical capabilities and business needs.
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-        
-        <!-- AI-Powered Health Checkup -->
-        <div class="w3-col l4 m6 w3-margin-bottom">
-          <div class="w3-card w3-round-large w3-hover-shadow" style="height:100%; display:flex; flex-direction:column; margin:0 8px;">
-            <img src="healthai.jpg" alt="AI Health Checkup" style="width:100%; height:200px; object-fit:cover; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-            <div class="w3-container" style="padding: 24px; flex-grow:1;">
-              <h4 style="color: #333; font-weight: 600;"><b>AI-Powered Health Checkup</b></h4>
-              <p class="w3-opacity">Streamlit, LangChain, PDF Analysis</p>
-              <p style="text-align: justify; margin-bottom:24px;">Created a Medical Report Assistant that extracts text from PDFs using pdfplumber, generates personalized medical suggestions using LangChain, and implements secure user authentication via session state management.</p>
-              <div class="w3-container w3-center">
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">Streamlit</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">OpenAI</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">AWS</div>
-              </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
+                    <p>Advanced proficiency in building intelligent systems and predictive models</p>
+                    <div class="tech-icons">
+                        <div class="tech-icon"><img src="artificial-intelligence.png" alt="AI"></div>
+                        <div class="tech-icon"><img src="deep-learning.png" alt="Deep Learning"></div>
+                        <div class="tech-icon"><img src="tensorflow.png" alt="TensorFlow"></div>
+                        <div class="tech-icon"><img src="huggingface.png" alt="Hugging Face"></div>
+                        <div class="tech-icon"><img src="icons8-chatgpt-50.png" alt="ChatGPT"></div>
+                        <div class="tech-icon"><img src="icons8-claude-50.png" alt="Claude"></div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-cloud"></i> Cloud & Big Data</h3>
+                    <p>Scalable solutions on cloud platforms with big data processing</p>
+                    <div class="tech-icons">
+                        <div class="tech-icon"><img src="aws.webp" alt="AWS"></div>
+                        <div class="tech-icon"><img src="icons8-aws-24.png" alt="AWS Services"></div>
+                        <div class="tech-icon"><img src="spark.png" alt="Apache Spark"></div>
+                        <div class="tech-icon"><img src="icons8-docker-50.png" alt="Docker"></div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-database"></i> Data & Analytics</h3>
+                    <p>Expert in data processing, analysis, and visualization</p>
+                    <div class="tech-icons">
+                        <div class="tech-icon"><img src="database.png" alt="Database"></div>
+                        <div class="tech-icon"><img src="mysql-database.png" alt="MySQL"></div>
+                        <div class="tech-icon"><img src="postgresql-logo.wine.png" alt="PostgreSQL"></div>
+                        <div class="tech-icon"><img src="pandas.png" alt="Pandas"></div>
+                        <div class="tech-icon"><img src="numpy.png" alt="NumPy"></div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-chart-bar"></i> Business Intelligence</h3>
+                    <p>Creating impactful visualizations and business insights</p>
+                    <div class="tech-icons">
+                        <div class="tech-icon"><img src="tableau-symbol.png" alt="Tableau"></div>
+                        <div class="tech-icon"><img src="powerbi.png" alt="Power BI"></div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-shield-alt"></i> Specialized Domains</h3>
+                    <p>Domain expertise in healthcare, security, and emerging technologies</p>
+                    <div class="tech-icons">
+                        <div class="tech-icon"><img src="healthai.png" alt="Health AI"></div>
+                        <div class="tech-icon"><img src="cyber-security.png" alt="Cybersecurity"></div>
+                        <div class="tech-icon"><img src="ayurveda.png" alt="Ayurveda"></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      
-      <!-- Second Row - 3 cards -->
-      <div class="w3-row">
-        <!-- Alternative Health Recommendation RAG Model -->
-        <div class="w3-col l4 m6 w3-margin-bottom">
-          <div class="w3-card w3-round-large w3-hover-shadow" style="height:100%; display:flex; flex-direction:column; margin:0 8px;">
-            <img src="aiayurveda.png" alt="Health Recommendation RAG Model" style="width:100%; height:200px; object-fit:cover; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-            <div class="w3-container" style="padding: 24px; flex-grow:1;">
-              <h4 style="color: #333; font-weight: 600;"><b>Health Recommendation RAG Model</b></h4>
-              <p class="w3-opacity">Streamlit, FAISS, LLaMA3.1</p>
-              <p style="text-align: justify; margin-bottom:24px;">Developed a Streamlit-based Health Chatbot that integrates FAISS retrieval, Hugging Face embeddings, and Ollama's LLaMA3.1 model to provide medical insights from novel, published, peer-reviewed research.</p>
-              <div class="w3-container w3-center">
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">FAISS</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">Hugging Face</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">LLaMA3.1</div>
-              </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="artificial-intelligence.png" alt="Credit Risk AI">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Credit Risk Assessment Platform</h3>
+                        <p class="project-description">
+                            Comprehensive AI-powered credit risk platform using advanced machine learning 
+                            to predict default probabilities and optimize lending decisions.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">XGBoost</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="speechai.jpg" alt="AI Contract Reader">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Powered Contract Reader</h3>
+                        <p class="project-description">
+                            LLM-based system leveraging GPT-4 and RAG to extract and summarize legal terms, 
+                            reducing manual review time by over 50%.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">LLMs</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">LangChain</span>
+                            <span class="tag">FAISS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="Braintumor.png" alt="Healthcare AI">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI Healthcare Analytics</h3>
+                        <p class="project-description">
+                            Advanced healthcare AI system for medical imaging analysis and patient outcome 
+                            prediction using deep learning and computer vision.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="wildfire.png" alt="Anomaly Detection">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Financial Anomaly Detection</h3>
+                        <p class="project-description">
+                            Real-time anomaly detection system for financial transactions using advanced 
+                            ML algorithms and deployed on Azure cloud infrastructure.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Azure</span>
+                            <span class="tag">Anomaly Detection</span>
+                            <span class="tag">Real-time</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Wild Fire Prediction -->
-        <div class="w3-col l4 m6 w3-margin-bottom">
-          <div class="w3-card w3-round-large w3-hover-shadow" style="height:100%; display:flex; flex-direction:column; margin:0 8px;">
-            <img src="wildfire.png" alt="Wild Fire Prediction" style="width:100%; height:200px; object-fit:cover; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-            <div class="w3-container" style="padding: 24px; flex-grow:1;">
-              <h4 style="color: #333; font-weight: 600;"><b>Wild Fire Prediction</b></h4>
-              <p class="w3-opacity">LSTM, Attention, Transformers</p>
-              <p style="text-align: justify; margin-bottom:24px;">Predicted wildfire hotspots using LSTM, Attention, and Transformer models, improving forecast accuracy by 20%. Leveraged deep learning to analyze environmental data and identify high-risk areas.</p>
-              <div class="w3-container w3-center">
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">LSTM</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">Transformers</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">PyTorch</div>
-              </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="portfolio.html" class="btn btn-primary">
+                    <i class="fas fa-folder-open"></i> View Full Portfolio
+                </a>
             </div>
-          </div>
         </div>
-        
-        <!-- Brain Tumor Image Classification -->
-        <div class="w3-col l4 m6 w3-margin-bottom">
-          <div class="w3-card w3-round-large w3-hover-shadow" style="height:100%; display:flex; flex-direction:column; margin:0 8px;">
-            <img src="Braintumor.png" alt="Brain Tumor Classification" style="width:100%; height:200px; object-fit:cover; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-            <div class="w3-container" style="padding: 24px; flex-grow:1;">
-              <h4 style="color: #333; font-weight: 600;"><b>Brain Tumor Classification</b></h4>
-              <p class="w3-opacity">CNN, TensorFlow, OpenCV</p>
-              <p style="text-align: justify; margin-bottom:24px;">Developed a CNN-based brain tumor detection model using TensorFlow, Keras, OpenCV, NumPy, and Scikit-learn. Achieved high accuracy and precision in identifying and classifying brain tumors from medical imaging datasets.</p>
-              <div class="w3-container w3-center">
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">CNN</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">TensorFlow</div>
-                <div class="w3-tag w3-round-large" style="background-color:#4FD1C5; margin: 4px; padding: 5px 10px; color: white;">OpenCV</div>
-              </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Let's Connect & Collaborate</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                I'm passionate about building meaningful professional relationships and contributing to the AI community.
+            </p>
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:katreddisrisaidurga@gmail.com">katreddisrisaidurga@gmail.com</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <a href="tel:+19174007205">+1 (917) 400-7205</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/sri-sai-durga-katreddi-" target="_blank">Connect with me</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/KATREDDIDURGA" target="_blank">View my code</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-</div>
-  
-  
-  <!-- Contact Section -->
-<div class="w3-container" style="padding:128px 16px; background-color: #1a202c; color: white;" id="contact">
-    <h3 class="w3-center">CONTACT</h3>
-    <div class="container">
-      <p class="heading">
-        <center>Interested in hiring me? Or in collaborating or learning more about my work? I'm always open to discussing new projects and opportunities.
-        </center>
-      </p>
+    </section>
 
-      <div class="btn-row">
-        <a href="https://www.linkedin.com/in/sri-sai-durga-katreddi-/" class="btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-          Connect on LinkedIn
-        </a>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/sri-sai-durga-katreddi-" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/KATREDDIDURGA" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:katreddisrisaidurga@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+19174007205" class="social-link">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Durga Katreddi. Crafted with 💜 and cutting-edge web technologies.</p>
+            <p style="opacity: 0.7; font-size: 0.9rem;">
+                "The best solutions emerge when diverse minds collaborate toward a common goal."
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Typing animation for hero subtitle
+        const subtitle = document.querySelector('.subtitle');
+        const text = subtitle.textContent;
+        subtitle.textContent = '';
         
-        <a href="https://drive.google.com/file/d/1hvJPM3GCelxxrBJfoYCE0DGCR208ZW7o/view?usp=sharing" class="btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-          View Resume/CV
-        </a>
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                subtitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
         
+        setTimeout(typeWriter, 1000);
 
-      </div>
-  
-      
-      <div class="social-icons">
-        <a href="#" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
+        // Particle background effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: rgba(255,255,255,0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                animation: float 6s linear infinite;
+                left: ${Math.random() * 100}%;
+                animation-delay: ${Math.random() * 6}s;
+            `;
+            
+            document.querySelector('.hero').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 300);
+
+        // Contact form animation
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px) scale(1)';
+            });
+        });
+
+        // Project card hover effects
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const img = this.querySelector('.project-image img');
+                if (img) {
+                    img.style.transform = 'scale(1.1) rotate(5deg)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const img = this.querySelector('.project-image img');
+                if (img) {
+                    img.style.transform = 'scale(1) rotate(0deg)';
+                }
+            });
+        });
+
+        // Dynamic year in footer
+        document.querySelector('footer p').innerHTML = 
+            `&copy; ${new Date().getFullYear()} Durga Katreddi. Crafted with 💜 and cutting-edge web technologies.`;
+
+        // Tech icon hover effects
+        document.querySelectorAll('.tech-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                this.style.color = 'white';
+                const img = this.querySelector('img');
+                if (img) {
+                    img.style.filter = 'brightness(0) invert(1)';
+                }
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.background = '#f8faff';
+                this.style.color = 'inherit';
+                const img = this.querySelector('img');
+                if (img) {
+                    img.style.filter = 'none';
+                }
+            });
+        });
+
+        // Scroll progress indicator
+        const progressBar = document.createElement('div');
+        progressBar.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        `;
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        });
+
+        // Preload images for better performance
+        const imageUrls = [
+            'profilepic.png',
+            'artificial-intelligence.png',
+            'aws.webp',
+            'deep-learning.png',
+            'tensorflow.png',
+            'huggingface.png',
+            'icons8-chatgpt-50.png',
+            'icons8-claude-50.png',
+            'database.png',
+            'mysql-database.png',
+            'postgresql-logo.wine.png',
+            'pandas.png',
+            'numpy.png',
+            'tableau-symbol.png',
+            'powerbi.png',
+            'healthai.png',
+            'cyber-security.png',
+            'ayurveda.png',
+            'Braintumor.png',
+            'speechai.jpg',
+            'wildfire.png',
+            'spark.png',
+            'icons8-docker-50.png',
+            'icons8-aws-24.png'
+        ];
+
+        imageUrls.forEach(url => {
+            const img = new Image();
+            img.src = url;
+        });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.createElement('div');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileMenuBtn.className = 'mobile-menu-btn';
+        mobileMenuBtn.style.cssText = `
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        `;
         
-        <a href="#" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-        </a>
-        
-        <a href="#" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-        </a>
-      </div>
-      
-      <div class="contact-info">
-        <a href="mailto:katreddisrisaidurga@gmail.com" class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          katreddisrisaidurga@gmail.com
-        </a>
-        
-        <a href="tel:+19174007205" class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-          </svg>
-          +1 (917) 400-7205
-        </a>
-      </div>
-      
-      <p class="footer">
-        <center>© 2023 - 2025 Durga Katreddi. All rights reserved.</center>
-      </p>
-    </div>
-  </div>
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+        document.querySelector('.nav-container').appendChild(mobileMenuBtn);
 
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
+        // Mobile responsive navigation
+        if (window.innerWidth <= 768) {
+            mobileMenuBtn.style.display = 'block';
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '1rem';
+                navLinks.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+        }
 
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
-}
+        // Performance optimization: Lazy loading for images
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
 
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
+        lazyImages.forEach(img => imageObserver.observe(img));
+    </script>
 
+    <style>
+        /* Additional styles for enhanced interactions */
+        .particle {
+            animation-name: particleFloat;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        .nav-links a.active {
+            color: #667eea;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .tech-icon img {
+            transition: all 0.3s ease;
+        }
+
+        .project-image img {
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile menu styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block !important;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Loading animation */
+        .lazy {
+            filter: blur(5px);
+            transition: filter 0.3s;
+        }
+
+        /* Enhanced button hover effects */
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        /* Scroll animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease forwards;
+        }
+    </style>
 </body>
 </html>
